@@ -2,10 +2,6 @@
   "name": "typescript-database-app",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "npm": "8.12.0",
-    "node": "16.14.2"
-  },
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
@@ -55,11 +51,6 @@
     ]
   },
   "devDependencies": {
-    "npm-watch": "^0.11.0",
-    "typescript": "^4.8.1-rc"
-  }
-  ,
-  "watch": {
-    "build": "src/"
+    "gh-pages": "^4.0.0"
   }
 }
