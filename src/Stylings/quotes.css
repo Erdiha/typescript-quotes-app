@@ -1,0 +1,290 @@
+*, html, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: #0D0D0D;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body, html {
+  height: 100%;
+  overflow-x: hidden;
+  z-index: 0;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+
+#footer {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  width: 100%;
+  background-color: #A68F97;
+  bottom: 0;
+  z-index: 5;
+}
+
+#navbar {
+  position: fixed;
+  height: 80px;
+  width: 100%;
+  background-color: #A68F97;
+  top: 0;
+  z-index: 5;
+}
+
+.navbar-wrapper {
+  display: flex;
+  min-height: 80px;
+  background-color: #A68F97;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 60px;
+  z-index: 10;
+}
+
+.nav-brand {
+  font-size: 2rem;
+  text-decoration: none;
+  z-index: 10;
+}
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+  align-items: center;
+  font-size: 1.5rem;
+  width: 50%;
+  justify-content: space-evenly;
+  margin-left: auto;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.hamburger-wrapper {
+  display: none;
+  cursor: pointer;
+}
+.hamburger-wrapper :nth-child(1) {
+  border-radius: 5px 5px 0px 0px;
+}
+.hamburger-wrapper :nth-child(3) {
+  border-radius: 0px 0px 5px 5px;
+}
+
+.bar {
+  display: block;
+  width: 30px;
+  height: 4.5px;
+  margin: 3px auto;
+  background-color: white;
+  --webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+  .hamburger-wrapper {
+    display: block;
+    z-index: 6;
+  }
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    gap: 1rem;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    font-size: 2rem;
+    background-color: #3A8C75;
+    padding: 5% 0px;
+    --webkit-transition: 0.3s ease;
+    transition: 0.5s ease;
+    z-index: 5;
+  }
+  .nav-menu.active {
+    --webkit-transition: all 0.5s ease;
+    transition: 0.5s ease;
+    top: 0;
+  }
+  .hamburger-wrapper.active {
+    z-index: 6;
+  }
+  .hamburger-wrapper.active a {
+    cursor: pointer;
+  }
+  .hamburger-wrapper.active :nth-child(1) {
+    border-radius: 0px;
+    transform: translateY(3px) rotate(-45deg);
+  }
+  .hamburger-wrapper.active :nth-child(3) {
+    border-radius: 0px;
+    transform: translateY(-5px) rotate(45deg);
+  }
+  .hamburger-wrapper.active :nth-child(2) {
+    display: none;
+  }
+}
+#quotes {
+  display: grid;
+  width: 100%;
+  height: calc(100vh - 160px);
+  align-items: center;
+  justify-content: center;
+}
+
+.quotes-wrapper {
+  display: grid;
+  grid-template-rows: 80fr 10fr;
+  margin: auto;
+  width: clamp(350px, 30vw, 40vw);
+  height: 65%;
+  gap: 5px;
+  --webkit-transition: 0.3s all ease;
+  transition: 0.5s ease;
+}
+.quotes-wrapper .section {
+  display: grid;
+  background-color: #3A8C75;
+  height: 100%;
+  width: 100%;
+  border-radius: 15px 15px 0px 0px;
+  box-shadow: inset 0px 0px 10px black, 0px 0px 10px black;
+}
+.quotes-wrapper .form {
+  display: grid;
+  grid-template-rows: 10fr 85fr;
+  gap: 10px;
+  width: 90%;
+  height: 80%;
+}
+.quotes-wrapper .form input, .quotes-wrapper .form textarea {
+  font-size: 20px;
+  padding: 10px 10px;
+}
+.quotes-wrapper p {
+  text-align: center;
+}
+.quotes-wrapper .get-quotes {
+  border-radius: 0px 0px 15px 15px;
+}
+.quotes-wrapper .get-quote-btn {
+  font-size: 30px;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px 0px 15px 15px;
+  border: none;
+  background-color: #3A8C75;
+  box-shadow: inset 0px 0px 10px black, 0px 0px 10px black;
+}
+.quotes-wrapper .get-quote-btn:hover {
+  cursor: pointer;
+  background-color: rgb(183, 183, 183);
+  transform: scale(1.05);
+}
+.quotes-wrapper .get-quote-btn:active {
+  transform: scale(1);
+}
+.quotes-wrapper .quote-container {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+.quotes-wrapper .quote-container .quote-items {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 80%;
+  height: 80%;
+  gap: 2rem;
+}
+.quotes-wrapper .quote-container .quote-items .form-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 95%;
+  padding: 10px;
+  overflow-wrap: break-word;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0D0D0D;
+  background-color: #3A8C75;
+  box-shadow: inset 0px 0px 5px 0px #401A0D;
+  font-size: x-large;
+  line-height: 1.8rem;
+  margin-top: 8rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+}
+.quotes-wrapper .quote-container .quote-items .form-username {
+  display: flex;
+  -webkit-text-decoration-line: underline;
+          text-decoration-line: underline;
+  -webkit-text-decoration-style: solid;
+          text-decoration-style: solid;
+  -webkit-text-decoration-color: #A67841;
+          text-decoration-color: #A67841;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 10px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  height: 10%;
+  padding: 10px;
+  letter-spacing: 4px;
+  font-size: x-large;
+  font-weight: bolder;
+}
+.quotes-wrapper .quote-container .arrow {
+  display: flex;
+  justify-content: space-between;
+  width: 3rem;
+  --webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+.quotes-wrapper .quote-container .arrow:hover {
+  cursor: pointer;
+}
+.quotes-wrapper .quote-container .left-arrow {
+  position: absolute;
+  left: 0;
+  transform: rotate(180deg);
+}
+.quotes-wrapper .quote-container .left-arrow:active {
+  cursor: pointer;
+  transform: scale(1.1) rotate(180deg);
+}
+.quotes-wrapper .quote-container .rigth-arrow {
+  position: absolute;
+  right: 0;
+}
+.quotes-wrapper .quote-container .rigth-arrow:active {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+.quotes-wrapper .quote-container .delete-quote-btn {
+  display: flex;
+  position: absolute;
+  bottom: 30px;
+  width: 3rem;
+  height: 3rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: solid red 2px;
+  box-shadow: 0px 0px 10px 1px black;
+}/*# sourceMappingURL=quotes.css.map */
